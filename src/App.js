@@ -73,24 +73,27 @@ function App() {
   return (
     <Container fluid className="p-0 m-0">
       <Suspense fallback={<div>Loading...</div>}>
-        <Row>
-          <Col sm="12" md="6" lg="3" xl="3" className="p-0 m-0">
-            <Home />
-          </Col>
-          <Col sm="12" md="6" lg="3" xl="3" className="p-0 m-0">
-            <Cart
-              items={cart}
-              setTotalCart={setTotalCart}
-            />
-          </Col>
-          <Col sm="12" md="12" lg="6" xl="6" className="p-0 m-0">
-            <Approval
-              employeeModes={employeeModes}
-              months={months}
-              totalCart={totalCart}
-            />
-          </Col>
-        </Row>
+        <div className="section">
+          <Row className="h-100" style={{ overflowY: 'auto' }}>
+            <Col sm="12" md="6" lg="3" xl="3" className="p-0 m-0">
+              <Home />
+            </Col>
+            <Col sm="12" md="6" lg="3" xl="3" className="p-0 m-0">
+              <Cart
+                items={cart}
+                setTotalCart={setTotalCart}
+              />
+            </Col>
+            <Col sm="12" md="12" lg="6" xl="6" className="p-0 m-0">
+              <Approval
+                employeeModes={employeeModes}
+                months={months}
+                totalCart={totalCart}
+              />
+            </Col>
+          </Row>
+
+        </div>
       </Suspense>
     </Container>
   );

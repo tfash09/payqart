@@ -17,8 +17,8 @@ const Cart = ({items, setTotalCart}) =>{
                         return(
                             <div className="item" key={i}>
                                 <Row>
-                                    <Col md="4"><Image src={item.imageUrl} /></Col>
-                                    <Col md="8 mt-2">
+                                    <Col sm="4"><Image src={item.imageUrl} /></Col>
+                                    <Col sm="8 mt-2 w-100" className="itemDetails">
                                         <p>{item.productName}</p>
                                         <p>₦{numberWithCommas(item.price)}</p>
                                         <p>Qty: {item.quantity}</p>
@@ -31,8 +31,8 @@ const Cart = ({items, setTotalCart}) =>{
             </Card>
             <Card body className="">
                 <Row>
-                    <Col md="6">Total Cart Value: </Col>
-                    <Col md="6"><b className="float-right">₦{numberWithCommas(totalCartValue)}</b></Col>
+                    <Col sm="6">Total Cart Value: </Col>
+                    <Col sm="6"><b className="float-right">₦{numberWithCommas(totalCartValue)}</b></Col>
                 </Row>
             </Card>
         </div>

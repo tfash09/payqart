@@ -98,7 +98,7 @@ const StepTwo = ({months, handelChange, minimumDownPayment, shoppingCredit, mont
             <h4>Choose Your Plan</h4>
             <Row>
                 {months.map((month,i) =>
-                    <Col md="2" key={i}>
+                    <Col sm="4" md="3" lg="2" key={i}>
                         <label>
                             <input 
                                 type="radio" 
@@ -122,43 +122,51 @@ const StepTwo = ({months, handelChange, minimumDownPayment, shoppingCredit, mont
                 <Col md="12">
                     <h4>Payment Breakdown</h4>
                     <div className="breakdown">
-                        <div className="first">
-                            <p>Shopping Credit</p>
-                            <p>Down Payment</p>
-                            <p>Monthly Installment</p>
-                            <p>Tenure</p>
-                        </div>
-                        <div className="second">
-                            <p>₦{numberWithCommas(shoppingCredit.toFixed(2))}</p>
-                            <p>₦{numberWithCommas(minimumDownPayment.toFixed(2))}</p>
-                            <p>₦{numberWithCommas(monthlyRepayment.toFixed(2))}</p>
-                            <p>{`${noMonth} ${noMonth > 1 ? `months` : `month`}`}</p>
-                        </div>
-                        <div className="third">
-                            <div>
-                                <p>Customize</p>
-                                <p>Down Payment</p>
-                                <Form.Label htmlFor="inlineFormInputGroup" srOnly>
-                                    Amount Paid
-                                </Form.Label>
-                                <InputGroup className="mb-2">
-                                    <InputGroup.Prepend>
-                                        <InputGroup.Text>₦</InputGroup.Text>
-                                    </InputGroup.Prepend>
-                                    <FormControl 
-                                        id="inlineFormInputGroup" 
-                                        value={minimumDownPayment} 
-                                        />
-                                </InputGroup>
-                            </div>
+                        <Row className="m-0">
+                            <Col sm="8" md="7" lg="4" className="m-0 p-0">
+                                <div className="first">
+                                    <p>Shopping Credit</p>
+                                    <p>Down Payment</p>
+                                    <p>Monthly Installment</p>
+                                    <p>Tenure</p>
+                                </div>
+                            </Col>
+                            <Col sm="4" md="4" lg="3" className="m-0 p-0">
+                                <div className="second">
+                                    <p>₦{numberWithCommas(shoppingCredit.toFixed(2))}</p>
+                                    <p>₦{numberWithCommas(minimumDownPayment.toFixed(2))}</p>
+                                    <p>₦{numberWithCommas(monthlyRepayment.toFixed(2))}</p>
+                                    <p>{`${noMonth} ${noMonth > 1 ? `months` : `month`}`}</p>
+                                </div>
+                            </Col>
+                            <Col sm="12" md="12" lg="5" className="m-0 p-0">
+                                <div className="third">
+                                    <div>
+                                        <p>Customize</p>
+                                        <p>Down Payment</p>
+                                        <Form.Label htmlFor="inlineFormInputGroup" srOnly>
+                                            Amount Paid
+                                        </Form.Label>
+                                        <InputGroup className="mb-2">
+                                            <InputGroup.Prepend>
+                                                <InputGroup.Text>₦</InputGroup.Text>
+                                            </InputGroup.Prepend>
+                                            <FormControl
+                                                id="inlineFormInputGroup"
+                                                value={minimumDownPayment}
+                                            />
+                                        </InputGroup>
+                                    </div>
+                                    <Button
+                                        variant="outlined"
+                                        color="secondary">
+                                        Update Breakdown
+                                    </Button>
+                                </div>
 
-                            <Button
-                                variant="outlined"
-                                color="secondary">
-                                Update Breakdown
-                            </Button>
+                            </Col>
 
-                        </div>
+                        </Row>
 
                     </div>
                 </Col>
@@ -354,11 +362,11 @@ export default function Approval({employeeModes, months, totalCart}) {
   return (
     <div className={`${classes.root} approval`}>
         <Row>
-            <Col md="2">
+            <Col md="1">
                 {activeStep > 0 && <p className="back" onClick={handleBack}><ArrowBack /> Back</p>}                
             </Col>
-            <Col md="10">
-                  <Stepper alternativeLabel activeStep={activeStep} className="w-75" connector={<ColorlibConnector />}>
+            <Col md="9">
+                  <Stepper alternativeLabel activeStep={activeStep} className="w-75 m-auto" connector={<ColorlibConnector />}>
                       {steps.map((label) => (
                           <Step key={label}>
                               <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
