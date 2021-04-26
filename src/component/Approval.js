@@ -98,7 +98,7 @@ const StepTwo = ({months, handelChange, minimumDownPayment, shoppingCredit, mont
             <h4>Choose Your Plan</h4>
             <Row>
                 {months.map((month,i) =>
-                    <Col sm="4" md="3" lg="2" key={i}>
+                    <Col key={i}>
                         <label>
                             <input 
                                 type="radio" 
@@ -123,15 +123,15 @@ const StepTwo = ({months, handelChange, minimumDownPayment, shoppingCredit, mont
                     <h4>Payment Breakdown</h4>
                     <div className="breakdown">
                         <Row className="m-0">
-                            <Col sm="8" md="7" lg="4" className="m-0 p-0">
+                            <Col lg="8" md="12" sm="12" className="m-0 p-0">
                                 <div className="first">
                                     <p>Shopping Credit</p>
                                     <p>Down Payment</p>
                                     <p>Monthly Installment</p>
                                     <p>Tenure</p>
                                 </div>
-                            </Col>
-                            <Col sm="4" md="4" lg="3" className="m-0 p-0">
+                            {/* </Col>
+                            <Col lg="3" md="4" sm="4" className="m-0 p-0"> */}
                                 <div className="second">
                                     <p>₦{numberWithCommas(shoppingCredit.toFixed(2))}</p>
                                     <p>₦{numberWithCommas(minimumDownPayment.toFixed(2))}</p>
@@ -139,7 +139,7 @@ const StepTwo = ({months, handelChange, minimumDownPayment, shoppingCredit, mont
                                     <p>{`${noMonth} ${noMonth > 1 ? `months` : `month`}`}</p>
                                 </div>
                             </Col>
-                            <Col sm="12" md="12" lg="5" className="m-0 p-0">
+                            <Col sm="12" md="12" lg="4" className="m-0 p-0">
                                 <div className="third">
                                     <div>
                                         <p>Customize</p>

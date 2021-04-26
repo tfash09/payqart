@@ -7,7 +7,6 @@ html,body {
 
 .section{
   height:100vh;
-
 }
 
 .home{
@@ -114,7 +113,7 @@ html,body {
 .approval button:last-child{
   margin: 5px auto;
   border-radius: 15px;
-  width: 150px;
+  width: 145px;
 }
 
 .stepone h4, .steptwo h4{
@@ -153,7 +152,7 @@ html,body {
 }
 
 .steptwo .item{
-  width: 80px;
+  width: 60px;
   height: 60px;
   box-shadow: 4px 4px 4px 3px #e4e2e2;
   border-radius: 15px;
@@ -209,11 +208,12 @@ html,body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* width: 35%; */
+  width: 55%;
   padding: 10px;
   padding-left: 20px;
   position: relative;
   margin-top: 30px;
+  float: left;
 }
 
 .breakdown .first:after {
@@ -221,6 +221,7 @@ html,body {
   height: 75%; 
   width: 2px;
   margin-top: 15px;
+  width: 1%;
   position: absolute;
   right: 0;
   top: 0; 
@@ -232,11 +233,12 @@ html,body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* width: 25%; */
+  width: 40%;
   padding: 10px;
   padding-left: 25px;
   margin-top: 30px;
   font-weight: bolder;
+  float: left;
 }
 
 .breakdown .third{
@@ -293,7 +295,7 @@ html,body {
     height: 40rem !important;   
   }
   .cart{
-    height: 30rem !important;   
+    height: 40rem !important;   
   }
   .approval{
     height: 40rem !important;   
@@ -309,18 +311,9 @@ html,body {
     max-height: 100px;
     width: 100%;
   }
-  .steptwo{
+  .stepone, .steptwo{
     margin-top: 20px;
   }
 
-  .breakdown .first{
-    width: 60%;
-  }
-  .breakdown .second{
-    width: 60%;
-  }
-  .breakdown .third{
-    width: 100%;
-  }
 
 }
